@@ -3,27 +3,5 @@
     <string name="player1">Player1</string>
     <string name="player2">Player2</string>
     <string name="circleDescription">A simple circle</string>
-    <string name="lettersKey">H                 G                 F                 E                 D                 C                 B                 A</string>
-    <string name="numbersKey">1
 
-
-        2
-
-
-        3
-
-
-        4
-
-
-        5
-
-
-        6
-
-
-        7
-
-
-        8</string>
 </resources>

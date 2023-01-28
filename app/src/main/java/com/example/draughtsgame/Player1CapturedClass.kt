@@ -16,18 +16,18 @@ class Player1CapturedClass : RecyclerView.Adapter<MyViewHolder>() {
         return MyViewHolder(listItem)
     }
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-
+        holder.myTextView.text = "3"
     }
 
     override fun getItemCount(): Int {
-        return 5
+        return 8
     }
 
 }
 
 open class MyViewHolder(private val view: View) : RecyclerView.ViewHolder(view){
-    //val myTextView  = view.findViewById<>(R.id.capturedPiece)
+    val myTextView  = view.findViewById<TextView>(R.id.textView)
     //val drawable: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.circle, null)
-    val image: ImageView = view.findViewById(R.id.capturedPiece)
+    //val image: ImageView = view.findViewById(R.id.capturedPiece)
 
 }

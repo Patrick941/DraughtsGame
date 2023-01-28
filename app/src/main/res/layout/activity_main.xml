@@ -12,15 +12,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Player1Captured"
-        android:layout_width="310dp"
-        android:layout_height="32dp"
-        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toTopOf="@+id/OuterLayer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/Player1"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.281" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/Player1"
@@ -77,18 +76,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="10dp"
-                android:layout_height="358dp"
-                android:text="@string/numbersKey"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:translationX="2dp"
-                android:translationY="20dp"
-                tools:layout_editor_absoluteX="-24dp"
-                tools:layout_editor_absoluteY="403dp" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/Board"
@@ -1185,15 +1172,6 @@
                         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
                 </androidx.cardview.widget.CardView>
             </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="358dp"
-                android:layout_height="wrap_content"
-                android:text="@string/lettersKey"
-                android:textColor="#000000"
-                android:textSize="10sp"
-                android:translationX="25dp" />
 
         </androidx.cardview.widget.CardView>
 
