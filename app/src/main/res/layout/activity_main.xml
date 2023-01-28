@@ -92,6 +92,255 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Player1" >
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square3"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="225dp"
+                    android:translationY="315dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square33"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="135dp"
+                    android:translationY="315dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square32"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="315dp"
+                    android:translationY="315dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square31"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="45dp"
+                    android:translationY="315dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square2"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="270dp"
+                    android:translationY="270dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square29"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="180dp"
+                    android:translationY="270dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square28"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="90dp"
+                    android:translationY="270dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square27"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationY="270dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square26"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="225dp"
+                    android:translationY="225dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square25"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="315dp"
+                    android:translationY="225dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square24"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="135dp"
+                    android:translationY="225dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square23"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="45dp"
+                    android:translationY="225dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square22"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="270dp"
+                    android:translationY="180dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square1"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="180dp"
+                    android:translationY="180dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square19"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="90dp"
+                    android:translationY="180dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square18"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="0dp"
+                    android:translationY="180dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square17"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="315dp"
+                    android:translationY="135dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square16"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="225dp"
+                    android:translationY="135dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square15"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="135dp"
+                    android:translationY="135dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square14"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="45dp"
+                    android:translationY="135dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square13"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="270dp"
+                    android:translationY="90dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square12"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="180dp"
+                    android:translationY="90dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square11"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="90dp"
+                    android:translationY="90dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square10"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="0dp"
+                    android:translationY="90dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square9"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="315dp"
+                    android:translationY="45dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square8"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="225dp"
+                    android:translationY="45dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square7"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="135dp"
+                    android:translationY="45dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square6"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="45dp"
+                    android:translationY="45dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square5"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="270dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square4"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="180dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square30"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="90dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square21"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    app:cardBackgroundColor="@color/darkSquare" />
             </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
