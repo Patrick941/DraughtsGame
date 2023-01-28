@@ -1,5 +1,6 @@
 package com.example.draughtsgame
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -18,9 +19,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-            Player1CapturedRecycler.layoutManager = LinearLayoutManager(this)
         Log.i("myTag", "creating $thisName")
-
+        Player1CapturedRecycler.setBackgroundColor(Color.YELLOW )
+        Player1CapturedRecycler.layoutManager = LinearLayoutManager(this)
+        Player1CapturedRecycler.adapter = Player1CapturedClass()
 
     }
     private fun hideSystemUI() {
