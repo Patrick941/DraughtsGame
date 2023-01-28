@@ -9,14 +9,6 @@
     app:barrierMargin="0dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="41dp" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Player1Captured"
         android:layout_width="310dp"
@@ -26,9 +18,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/Player1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.281" >
-
-    </androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintVertical_bias="0.281" />
 
     <TextView
         android:id="@+id/Player1"

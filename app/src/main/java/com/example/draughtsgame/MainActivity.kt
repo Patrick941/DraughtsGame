@@ -10,19 +10,22 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import android.graphics.drawable.shapes.Shape
 
 class MainActivity : AppCompatActivity() {
     private var thisName = "MainActivity"
-    private val Player1CapturedRecycler = findViewById<RecyclerView>(R.id.Player1Captured)
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.i("myTag", "creating $thisName")
-        Player1CapturedRecycler.setBackgroundColor(Color.YELLOW )
-        Player1CapturedRecycler.layoutManager = LinearLayoutManager(this)
-        Player1CapturedRecycler.adapter = Player1CapturedClass()
+
+        val player1CapturedRecycler = findViewById<RecyclerView>(R.id.Player1Captured)
+        //player1CapturedRecycler.setBackgroundColor()
+        player1CapturedRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        player1CapturedRecycler.adapter = Player1CapturedClass()
 
     }
     private fun hideSystemUI() {
