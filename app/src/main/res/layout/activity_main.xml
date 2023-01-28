@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ConstraintLayout"
@@ -13,6 +14,7 @@
         android:id="@+id/Player1Captured"
         android:layout_width="310dp"
         android:layout_height="32dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/OuterLayer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -76,6 +78,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="10dp"
+                android:layout_height="358dp"
+                android:text="@string/numbersKey"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:translationX="2dp"
+                android:translationY="20dp"
+                tools:layout_editor_absoluteX="-24dp"
+                tools:layout_editor_absoluteY="403dp" />
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/Board"
                 android:layout_width="360dp"
@@ -93,211 +107,216 @@
                 app:layout_constraintTop_toBottomOf="@+id/Player1" >
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square3"
+                    android:id="@+id/Square35"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:translationX="225dp"
-                    android:translationY="315dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                    app:cardBackgroundColor="@color/lightSquare">
+
+                    <Button
+                        android:id="@+id/c1button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square33"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="135dp"
-                    android:translationY="315dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square32"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="315dp"
-                    android:translationY="315dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square31"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="45dp"
-                    android:translationY="315dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square2"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="270dp"
-                    android:translationY="270dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square29"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="180dp"
-                    android:translationY="270dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square28"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="90dp"
-                    android:translationY="270dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square27"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationY="270dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square26"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="225dp"
-                    android:translationY="225dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square25"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="315dp"
-                    android:translationY="225dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square24"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="135dp"
-                    android:translationY="225dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square23"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="45dp"
-                    android:translationY="225dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square22"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="270dp"
-                    android:translationY="180dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square1"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="180dp"
-                    android:translationY="180dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square19"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="90dp"
-                    android:translationY="180dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square18"
+                    android:id="@+id/Square38"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:translationX="0dp"
-                    android:translationY="180dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                    android:translationY="45dp"
+                    app:cardBackgroundColor="@color/lightSquare">
+
+                    <Button
+                        android:id="@+id/h2button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square17"
+                    android:id="@+id/Square37"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:translationX="315dp"
-                    android:translationY="135dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                    app:cardBackgroundColor="@color/lightSquare">
+
+                    <Button
+                        android:id="@+id/a1button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square16"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="225dp"
-                    android:translationY="135dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Square15"
+                    android:id="@+id/Square36"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:translationX="135dp"
-                    android:translationY="135dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                    app:cardBackgroundColor="@color/lightSquare">
+
+                    <Button
+                        android:id="@+id/e1button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square14"
+                    android:id="@+id/Square34"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:translationX="45dp"
-                    android:translationY="135dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                    app:cardBackgroundColor="@color/lightSquare">
+
+                    <Button
+                        android:id="@+id/g1button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square13"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="270dp"
-                    android:translationY="90dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                            android:id="@+id/Square21"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            app:cardBackgroundColor="@color/darkSquare">
+
+                    <Button
+                                android:id="@+id/h1button"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="visible"
+                                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                        </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square12"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="180dp"
-                    android:translationY="90dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                            android:id="@+id/Square4"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:translationX="180dp"
+                            app:cardBackgroundColor="@color/darkSquare">
+
+                    <Button
+                                android:id="@+id/d1button"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="visible"
+                                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                        </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square11"
+                    android:id="@+id/Square30"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:translationX="90dp"
-                    android:translationY="90dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                    app:cardBackgroundColor="@color/darkSquare">
+
+                    <Button
+                        android:id="@+id/f1button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square10"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:translationX="0dp"
-                    android:translationY="90dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                            android:id="@+id/Square5"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:translationX="270dp"
+                            app:cardBackgroundColor="@color/darkSquare">
+
+                    <Button
+                                android:id="@+id/b1button"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="visible"
+                                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                        </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square9"
+                            android:id="@+id/Square6"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:translationX="45dp"
+                            android:translationY="45dp"
+                            app:cardBackgroundColor="@color/darkSquare">
+
+                    <Button
+                                android:id="@+id/g2button"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="visible"
+                                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                        </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square39"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:translationX="315dp"
+                    android:translationX="90dp"
                     android:translationY="45dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                    app:cardBackgroundColor="@color/lightSquare">
+
+                    <Button
+                        android:id="@+id/f2button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square8"
+                    android:id="@+id/Square40"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:translationX="225dp"
+                    android:translationX="180dp"
                     android:translationY="45dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                    app:cardBackgroundColor="@color/lightSquare">
+
+                    <Button
+                        android:id="@+id/d2button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square41"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="270dp"
+                    android:translationY="45dp"
+                    app:cardBackgroundColor="@color/lightSquare">
+
+                    <Button
+                        android:id="@+id/b2button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/Square7"
@@ -305,44 +324,879 @@
                     android:layout_height="45dp"
                     android:translationX="135dp"
                     android:translationY="45dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                    app:cardBackgroundColor="@color/darkSquare">
+
+                    <Button
+                        android:id="@+id/e2button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square6"
+                    android:id="@+id/Square8"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="225dp"
+                    android:translationY="45dp"
+                    app:cardBackgroundColor="@color/darkSquare">
+
+                    <Button
+                        android:id="@+id/c2button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square3"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="225dp"
+                    android:translationY="315dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/c8button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square33"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="135dp"
+                    android:translationY="315dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/e8button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square32"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="315dp"
+                    android:translationY="315dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/a8button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square31"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:translationX="45dp"
-                    android:translationY="45dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                    android:translationY="315dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/g8button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square5"
+                    android:id="@+id/Square42"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:translationX="270dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                    android:translationX="0dp"
+                    android:translationY="315dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/h8button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square4"
+                    android:id="@+id/Square43"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:translationX="180dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                    android:translationY="315dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/d8button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square30"
+                    android:id="@+id/Square44"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="270dp"
+                    android:translationY="315dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/b8button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square45"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:translationX="90dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                    android:translationY="315dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/f8button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Square21"
+                    android:id="@+id/Square2"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    app:cardBackgroundColor="@color/darkSquare" />
+                    android:translationX="270dp"
+                    android:translationY="270dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/b7button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square29"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="180dp"
+                    android:translationY="270dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/d7button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square28"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="90dp"
+                    android:translationY="270dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/f7button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square27"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationY="270dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/h7button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square46"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationY="270dp"
+                    android:translationX="45dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/g7button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square47"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationY="270dp"
+                    android:translationX="135dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/e7button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square48"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationY="270dp"
+                    android:translationX="225dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/c7button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square49"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationY="270dp"
+                    android:translationX="315dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/a7button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square26"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="225dp"
+                    android:translationY="225dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/c6button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square25"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="315dp"
+                    android:translationY="225dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/a6button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square24"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="135dp"
+                    android:translationY="225dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/e6button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square23"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="45dp"
+                    android:translationY="225dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/g6button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square50"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="0dp"
+                    android:translationY="225dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/h6button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square51"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="90dp"
+                    android:translationY="225dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/f6button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square52"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="180dp"
+                    android:translationY="225dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/d6button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square53"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="270dp"
+                    android:translationY="225dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/b6button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square22"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="270dp"
+                    android:translationY="180dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/b5button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square1"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="180dp"
+                    android:translationY="180dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/d5button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square19"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="90dp"
+                    android:translationY="180dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/f5button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square18"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="0dp"
+                    android:translationY="180dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/h5button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square54"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="45dp"
+                    android:translationY="180dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/g5button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square55"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="135dp"
+                    android:translationY="180dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/e5button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square56"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="225dp"
+                    android:translationY="180dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/c5button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square57"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="315dp"
+                    android:translationY="180dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/a5button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square17"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="315dp"
+                    android:translationY="135dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/a4button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square16"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="225dp"
+                    android:translationY="135dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/c4button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square15"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="135dp"
+                    android:translationY="135dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/e4button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square14"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="45dp"
+                    android:translationY="135dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/g4button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square58"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="0dp"
+                    android:translationY="135dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/h4button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square59"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="90dp"
+                    android:translationY="135dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/f4button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square60"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="180dp"
+                    android:translationY="135dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/d4button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square61"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="270dp"
+                    android:translationY="135dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/b4button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square13"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="270dp"
+                    android:translationY="90dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/b3button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square12"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="180dp"
+                    android:translationY="90dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/d3button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square11"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="90dp"
+                    android:translationY="90dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/f3button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square10"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="0dp"
+                    android:translationY="90dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/h3button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square62"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="45dp"
+                    android:translationY="90dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/g3button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square63"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="135dp"
+                    android:translationY="90dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/e3button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square64"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="225dp"
+                    android:translationY="90dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/c3button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square65"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="315dp"
+                    android:translationY="90dp"
+                    app:cardBackgroundColor="@color/lightSquare" >
+
+                    <Button
+                        android:id="@+id/a3button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Square9"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:translationX="315dp"
+                    android:translationY="45dp"
+                    app:cardBackgroundColor="@color/darkSquare" >
+
+                    <Button
+                        android:id="@+id/a2button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </androidx.cardview.widget.CardView>
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="358dp"
+                android:layout_height="wrap_content"
+                android:text="@string/lettersKey"
+                android:textColor="#000000"
+                android:textSize="10sp"
+                android:translationX="25dp" />
+
         </androidx.cardview.widget.CardView>
+
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
