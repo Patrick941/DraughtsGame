@@ -2,12 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/Player2"
+    android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
     app:barrierMargin="0dp"
     tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Player1Captured"
+        android:layout_width="310dp"
+        android:layout_height="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/OuterLayer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Player1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.281" />
 
     <TextView
         android:id="@+id/Player1"
@@ -24,7 +35,7 @@
         app:layout_constraintVertical_bias="0.06" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/Player2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/player2"
@@ -45,7 +56,7 @@
         android:padding="0dp"
         app:cardBackgroundColor="@color/lightSquare"
         app:contentPadding="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/Player2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Player1">
@@ -76,10 +87,13 @@
                 android:translationY="10dp"
                 app:cardBackgroundColor="@color/lightSquare"
                 app:contentPadding="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView2"
+                app:layout_constraintBottom_toTopOf="@+id/Player2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Player1" />
+                app:layout_constraintTop_toBottomOf="@+id/Player1" >
+
+            </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

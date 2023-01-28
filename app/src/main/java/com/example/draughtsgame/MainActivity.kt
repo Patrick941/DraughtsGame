@@ -7,13 +7,18 @@ import android.view.View
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     private var thisName = "MainActivity"
+    private val Player1CapturedRecycler = findViewById<RecyclerView>(R.id.Player1Captured)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+            Player1CapturedRecycler.layoutManager = LinearLayoutManager(this)
         Log.i("myTag", "creating $thisName")
 
 
