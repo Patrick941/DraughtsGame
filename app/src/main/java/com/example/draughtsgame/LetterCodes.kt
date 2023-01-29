@@ -27,7 +27,7 @@ class LetterCodes : RecyclerView.Adapter<MyViewHolder>() {
 
 open class MyViewHolder(private val view: View) : RecyclerView.ViewHolder(view){
     val myTextView  = view.findViewById<TextView>(R.id.textView)
-    //val drawable: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.circle, null)
+    //val drawable: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.dark_piece.xml, null)
     //val image: ImageView = view.findViewById(R.id.capturedPiece)
 
 }
