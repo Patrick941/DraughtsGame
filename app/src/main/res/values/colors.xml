@@ -10,4 +10,5 @@
     <color name="background">#B18E7754</color>
     <color name="lightSquare">#fccc74</color>
     <color name="darkSquare">#8a785d</color>
+    <color name="redHighlight">#75FF0000</color>
 </resources>

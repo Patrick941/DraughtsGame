@@ -10,18 +10,17 @@
     app:barrierMargin="0dp"
     tools:context=".MainActivity">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/letterCodes"
-        android:layout_width="330dp"
+        android:layout_width="370dp"
         android:layout_height="20dp"
         app:layout_constraintBottom_toTopOf="@+id/OuterLayer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/OuterLayer"
+        app:layout_constraintHorizontal_bias="0.878"
+        app:layout_constraintStart_toStartOf="@+id/OuterLayer"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
-
 
     <TextView
         android:id="@+id/Player1"
