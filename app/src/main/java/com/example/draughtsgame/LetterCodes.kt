@@ -1,22 +1,22 @@
 package com.example.draughtsgame
 
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 
-class Player1CapturedClass : RecyclerView.Adapter<MyViewHolder>() {
+class LetterCodes : RecyclerView.Adapter<MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val listItem = layoutInflater.inflate(R.layout.list_item, parent, false)
+        val listItem = layoutInflater.inflate(R.layout.letter_box, parent, false)
         return MyViewHolder(listItem)
     }
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.myTextView.text = "3"
+        var posAscii = position.digitToChar()
+        val distanceFromH = 14 - (2 * position)
+        posAscii+=(42 + distanceFromH)
+        holder.myTextView.text = "$posAscii"
     }
 
     override fun getItemCount(): Int {
