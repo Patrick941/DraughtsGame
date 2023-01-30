@@ -10,10 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.MainThread
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
-import androidx.core.view.drawToBitmap
+import androidx.core.view.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     private val lightSquares = arrayOf(1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1)
     private val lightSquareStates = arrayOf(1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
     private val darkSquareStates = arrayOf(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1)
-    private val crownStates = arrayOf(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1)
+    private val crownStates = arrayOf(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
     private var currentSquare = - 1
     private var currentTurn = 0
     private var allCurrentBorder = arrayOf(-1, -1, -1, -1)
@@ -58,6 +55,9 @@ class MainActivity : AppCompatActivity() {
                             for (i in 0..3) {
                                 if (index == allCurrentBorder[i] && index != jumpableSquares[i]) {
                                     if (currentTurn == 1) {
+                                        val currentCrown = crownStates[currentSquare]
+                                        crownStates[currentSquare] = crownStates[allCurrentBorder[i]]
+                                        crownStates[allCurrentBorder[i]] = currentCrown
                                         var nextChild = (LightPieces).getChildAt(currentSquare)
                                         nextChild.visibility = INVISIBLE
                                         nextChild = (LightPieces).getChildAt(allCurrentBorder[i])
@@ -75,7 +75,11 @@ class MainActivity : AppCompatActivity() {
                                             kingCrown.visibility = VISIBLE
                                         }
                                         clearBorders()
+                                        Log.i("myTag", "Turn has ended\n")
                                     } else {
+                                        val currentCrown = crownStates[currentSquare]
+                                        crownStates[currentSquare] = crownStates[allCurrentBorder[i]]
+                                        crownStates[allCurrentBorder[i]] = currentCrown
                                         var nextChild = (DarkPieces).getChildAt(currentSquare)
                                         nextChild.visibility = INVISIBLE
                                         nextChild = (DarkPieces).getChildAt(allCurrentBorder[i])
@@ -87,12 +91,19 @@ class MainActivity : AppCompatActivity() {
                                         player2Name.setBackgroundColor(Color.TRANSPARENT)
                                         Log.i("myTag", "$currentSquare moved to tile ${allCurrentBorder[i]}")
                                         if(allCurrentBorder[i] <= 7){
-
+                                            Log.i("myTag", "dark has unlocked a king")
+                                            crownStates[allCurrentBorder[i]] = 1
+                                            var kingCrown = (KingCrowns).getChildAt(allCurrentBorder[i])
+                                            kingCrown.visibility = VISIBLE
                                         }
                                         clearBorders()
+                                        Log.i("myTag", "Turn has ended\n")
                                     }
                                     currentSquare = -1
                                 } else if(index == jumpableSquares[i]){
+                                    val currentCrown = crownStates[currentSquare]
+                                    crownStates[currentSquare] = jumpableSquares[i]
+                                    crownStates[jumpableSquares[i]] = currentCrown
                                     if (currentTurn == 1) {
                                         var nextChild = (LightPieces).getChildAt(currentSquare)
                                         nextChild.visibility = INVISIBLE
@@ -106,9 +117,21 @@ class MainActivity : AppCompatActivity() {
                                         lightSquareStates[allCurrentBorder[i]] = 1
                                         if(jumpableSquares[i] >= 55){
                                             Log.i("myTag", "light has unlocked a king")
+                                            crownStates[jumpableSquares[i]] = 1
+                                            var kingCrown = (KingCrowns).getChildAt(jumpableSquares[i])
+                                            kingCrown.visibility = VISIBLE
                                         }
                                         Log.i("myTag", "$currentSquare jumped over ${allCurrentBorder[i]} to ${jumpableSquares[i]}")
                                         if(doubleJumpTest(i)){
+                                            for(i in 0..63){
+                                                if(crownStates[i] == 1){
+                                                    val crown = (KingCrowns).getChildAt(i)
+                                                    crown.visibility = VISIBLE
+                                                } else {
+                                                    val crown = (KingCrowns).getChildAt(i)
+                                                    crown.visibility = INVISIBLE
+                                                }
+                                            }
                                             for (i in 0..63) {
                                                 squares[i].setBackgroundColor(Color.TRANSPARENT)
                                             }
@@ -131,6 +154,7 @@ class MainActivity : AppCompatActivity() {
                                             currentTurn = 0
                                             player1Name.setBackgroundColor(Color.TRANSPARENT)
                                             player2Name.setBackgroundColor(Color.GREEN)
+                                            Log.i("myTag", "Turn has ended\n")
                                         }
                                     } else {
                                         var nextChild = (DarkPieces).getChildAt(currentSquare)
@@ -146,10 +170,22 @@ class MainActivity : AppCompatActivity() {
                                         Log.i("myTag", "$currentSquare jumped over ${allCurrentBorder[i]} to  ${jumpableSquares[i]}")
                                         if(jumpableSquares[i] <= 7){
                                             Log.i("myTag", "dark has unlocked a king")
+                                            crownStates[jumpableSquares[i]] = 1
+                                            var kingCrown = (KingCrowns).getChildAt(jumpableSquares[i])
+                                            kingCrown.visibility = VISIBLE
                                         }
                                         if(doubleJumpTest(i)){
                                             Log.i("myTag", "Dark can perform a double jump, the double jump squares are ${jumpableSquares[0]}, ${jumpableSquares[1]}, ${jumpableSquares[2]} and ${jumpableSquares[3]}")
                                             keepGoing = 1
+                                            for(i in 0..63){
+                                                if(crownStates[i] == 1){
+                                                    val crown = (KingCrowns).getChildAt(i)
+                                                    crown.visibility = VISIBLE
+                                                } else {
+                                                    val crown = (KingCrowns).getChildAt(i)
+                                                    crown.visibility = INVISIBLE
+                                                }
+                                            }
                                             for (i in 0..63) {
                                                 squares[i].setBackgroundColor(Color.TRANSPARENT)
                                             }
@@ -166,6 +202,7 @@ class MainActivity : AppCompatActivity() {
                                             currentTurn = 1
                                             player1Name.setBackgroundColor(Color.GREEN)
                                             player2Name.setBackgroundColor(Color.TRANSPARENT)
+                                            Log.i("myTag", "Turn has ended\n")
                                         }
                                     }
                                     currentSquare = -1
@@ -187,7 +224,7 @@ class MainActivity : AppCompatActivity() {
                             if ((currentSquare != -1 || firstMove == 1) && keepGoing == 0) {
                                 if((currentTurn == 1 && lightSquareStates[index] == 0) || (currentTurn == 0 && darkSquareStates[index] == 0)){
                                         firstMove = 0
-                                        if(currentPieceState == 1){
+                                        if(crownStates[index] == 1){
                                             allCurrentBorder[0] = index - 9
                                             allCurrentBorder[1] = index - 7
                                             allCurrentBorder[2] = index + 9
@@ -251,27 +288,37 @@ class MainActivity : AppCompatActivity() {
                                     }
                             }
                             currentSquare = index
+                            for(i in 0..63){
+                                if(crownStates[i] == 1){
+                                    val crown = (KingCrowns).getChildAt(i)
+                                    crown.visibility = VISIBLE
+                                } else {
+                                    val crown = (KingCrowns).getChildAt(i)
+                                    crown.visibility = INVISIBLE
+                                }
+                            }
+                            //for debugging purposes
+                            Log.i("myTag", "refreshing pieces")
+                            for (index in 0..63) {
+                                if (lightSquareStates[index] == 1) {
+                                    val nextChild = (LightPieces).getChildAt(index)
+                                    nextChild.visibility = INVISIBLE
+                                } else {
+                                    val nextChild = (LightPieces).getChildAt(index)
+                                    nextChild.visibility = VISIBLE
+                                }
+                                if (darkSquareStates[index] == 1) {
+                                    val nextChild = (DarkPieces).getChildAt(index)
+                                    nextChild.visibility = INVISIBLE
+                                } else {
+                                    val nextChild = (DarkPieces).getChildAt(index)
+                                    nextChild.visibility = VISIBLE
+                                }
+                            }
                         }else {
 
                         }
                     }
-                    //for debugging purposes
-                    /*for (index in 0..63) {
-                        if (lightSquareStates[index] == 1) {
-                            val nextChild = (LightPieces).getChildAt(index)
-                            nextChild.visibility = INVISIBLE
-                        } else {
-                            val nextChild = (LightPieces).getChildAt(index)
-                            nextChild.visibility = VISIBLE
-                        }
-                        if (darkSquareStates[index] == 1) {
-                            val nextChild = (DarkPieces).getChildAt(index)
-                            nextChild.visibility = INVISIBLE
-                        } else {
-                            val nextChild = (DarkPieces).getChildAt(index)
-                            nextChild.visibility = VISIBLE
-                        }
-                    }*/
                 }
         Log.i("myTag", "creating $thisName")
 
@@ -304,11 +351,11 @@ class MainActivity : AppCompatActivity() {
         var returnVal = false
         val testingForJump = jumpableSquares[index]
         Log.i("myTag", "Testing for double jumps at $testingForJump")
-        jumpableSquares[0] = -1
-        jumpableSquares[1] = -1
-        jumpableSquares[2] = -1
-        jumpableSquares[3] = -1
-        if(currentPieceState == 1){
+        clearFarBorders()
+        if(testingForJump == -1){
+            return false
+        }
+        if(crownStates[testingForJump] == 1){
             allCurrentBorder[0] = testingForJump - 9
             allCurrentBorder[1] = testingForJump - 7
             allCurrentBorder[2] = testingForJump + 9
@@ -335,7 +382,7 @@ class MainActivity : AppCompatActivity() {
                     val jumpableSquare = nextBorder[i]
                     Log.i("myTag", "dark searching for double jump over $nextSquare")
                     if (jumpableSquare in 0..63) {
-                        if (lightSquareStates[jumpableSquare] == 1 && darkSquareStates[jumpableSquare] == 1 && lightSquares[jumpableSquare] == 0) {
+                        if (lightSquareStates[jumpableSquare] == 1 && darkSquareStates[jumpableSquare] == 1 && lightSquares[jumpableSquare] == 0 && lightSquareStates[nextSquare] == 0) {
                             jumpableSquares[i] = jumpableSquare
                             //Log.i("myTag", "dark can jump")
                             returnVal = true
@@ -349,7 +396,7 @@ class MainActivity : AppCompatActivity() {
                     val jumpableSquare = nextBorder[i]
                     Log.i("myTag", "light searching for double jump over $nextSquare")
                     if (jumpableSquare in 0..63) {
-                        if (lightSquareStates[jumpableSquare] == 1 && darkSquareStates[jumpableSquare] == 1 && lightSquares[jumpableSquare] == 0) {
+                        if (lightSquareStates[jumpableSquare] == 1 && darkSquareStates[jumpableSquare] == 1 && lightSquares[jumpableSquare] == 0 && darkSquareStates[nextSquare] == 1) {
                             jumpableSquares[i] = jumpableSquare
                             //Log.i("myTag", "light can jump")
                             returnVal = true
@@ -362,6 +409,20 @@ class MainActivity : AppCompatActivity() {
         }
         Log.i("myTag", "Double jump not possible")
         return returnVal
+    }
+
+    private fun clearNearBorders() {
+        allCurrentBorder[0] = -1
+        allCurrentBorder[1] = -1
+        allCurrentBorder[2] = -1
+        allCurrentBorder[3] = -1
+    }
+
+    private fun clearFarBorders(){
+        jumpableSquares[0] = -1
+        jumpableSquares[1] = -1
+        jumpableSquares[2] = -1
+        jumpableSquares[3] = -1
     }
 
     private fun clearBorders() {
